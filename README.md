@@ -23,6 +23,8 @@ This code has been debugged to work with a very specific combination of librarie
 
 ## Connections (Pinout)
 
+## Connections (Pinout)
+
 This project uses the 8-color VGA mode (5 pins) to simplify the wiring.
 
 | Component | ESP32 Pin | Connection |
@@ -30,7 +32,19 @@ This project uses the 8-color VGA mode (5 pins) to simplify the wiring.
 | **VGA SIGNAL** | | |
 | HSync | `GPIO 18` | VGA Pin 13 |
 | VSync | `GPIO 5` | VGA Pin 14 |
-| Red | `GPIO 22` | Resistor (330Ω-4
+| Red | `GPIO 22` | Resistor (330Ω-470Ω) -> VGA Pin 1 |
+| Green | `GPIO 21` | Resistor (330Ω-470Ω) -> VGA Pin 2 |
+| Blue | `GPIO 19` | Resistor (330Ω-470Ω) -> VGA Pin 3 |
+| Ground | `GND` | VGA Pins 5, 6, 7, 8, 10 |
+| | | |
+| **CONTROLS** | | |
+| P1 (Pot) | `GPIO 34` | Center pin (Wiper). The other two to 3.3V & GND. |
+| P2 (Pot) | `GPIO 35` | Center pin (Wiper). The other two to 3.3V & GND. |
+| Serve Button | `GPIO 12` | One side of the button. The other side to `GND`. |
+| | | |
+| **SOUND** | | |
+| Speaker | `GPIO 25` | Positive (+) pin of the buzzer/speaker. |
+| Ground | `GND` | Negative (-) pin of the buzzer/speaker. |
 
 
 
