@@ -1,3 +1,39 @@
+
+# ESP32 FabGL Pong
+
+This is a classic Pong project for the ESP32, using the incredible FabGL library to generate VGA video and sound. The game is controlled by two potentiometers (one for each player) and a button to serve.
+
+The code is configured for a 320x240 @ 60Hz resolution.
+
+![Add a photo or GIF of your game working here!]
+
+## Credits and Acknowledgements
+
+This project would not be possible without the amazing work of **Fabrizio Di Vittorio**. All credit for the VGA video generation, sound, and peripheral management goes to his [**FabGL** library](http://www.fabglib.org/).
+
+This repository simply implements the Pong game logic on top of that powerful library.
+
+## Compilation Requirements (Important!)
+
+This code has been debugged to work with a very specific combination of libraries and ESP32 core versions, as detailed in [this notice](http://www.fabglib.org/):
+
+* **Board:** ESP32 (Any model, e.g., ESP32 DEVKIT V1).
+* **FabGL Library:** Version `v1.0.9` (the latest official "release").
+* **ESP32 Boards Package:** Version `2.0.14` or `2.0.17`. **Do not use v3.x.x**, as it is not compatible with FabGL v1.0.9 and will cause compilation errors in the library's internal files (`ps2controller.cpp`, etc.).
+
+## Connections (Pinout)
+
+This project uses the 8-color VGA mode (5 pins) to simplify the wiring.
+
+| Component | ESP32 Pin | Connection |
+| :--- | :--- | :--- |
+| **VGA SIGNAL** | | |
+| HSync | `GPIO 18` | VGA Pin 13 |
+| VSync | `GPIO 5` | VGA Pin 14 |
+| Red | `GPIO 22` | Resistor (330Ω-4
+
+
+
 # ESP32 FabGL Pong
 
 Este es un proyecto clásico de Pong para el ESP32, utilizando la increíble librería FabGL para generar video VGA y sonido. El juego está controlado por dos potenciómetros (uno para cada jugador) y un botón para el saque.
